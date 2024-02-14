@@ -10,22 +10,22 @@
 import waveTextAnimation from 'wave-text-animation';
 ```
 
->calling waveTextAnimation function from a package with id container and text to animate
+>calling waveTextAnimation function from a package with text to animate
 
 ```js
-waveTextAnimation('text', 'hello world');
+waveTextAnimation('hello world');
 ````
 
->Add this container in html - div or p or whatever you want but with<mark> id="text" class="text"</mark> 
+>Add this container in html - div or p or whatever you want but with<mark> id="text-container" class="text-container"</mark> 
 
 ```html
-<div id="text" class="text"></div
+<div id="text-container" class="text-container"></div
 ```
 
 >Place this CSS in a file
 
 ```css
-.text {
+.text-container {
   position: relative;
   margin: 0; padding: 0;
 }

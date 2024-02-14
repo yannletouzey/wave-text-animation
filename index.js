@@ -1,5 +1,5 @@
-const waveTextAnimation = (id, text) => {
-  const textContainer = document.getElementById(id);
+const waveTextAnimation = (text) => {
+  const textContainer = document.getElementById('text-container');
   const pOne = document.createElement('p');
   pOne.className = 'text pOne';
   const pTwo = document.createElement('p');
