@@ -25,30 +25,13 @@ waveTextAnimation('hello world');
 >Place this CSS in a file
 
 ```css
-.text-container {
-  position: relative;
-  margin: 0; padding: 0;
-}
-.pTwo {
-  margin: 0;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-}
-.pOne span {
-  transform-origin: bottom;
-}
 .pTwo span {
-  transform-origin: top;
-  color: transparent;
   transform: translateY(100%) rotateX(-90deg);
 }
-.text:hover .pOne span {
-  color: transparent;
+.text-container:hover .pOne span {
   transform: translateY(-100%) rotateX(-90deg);
 }
-.text:hover .pTwo span {
-  color: #000;
+.text-container:hover .pTwo span {
   transform: translateY(0%) rotateX(0deg);
 }
 ```
