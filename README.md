@@ -25,9 +25,6 @@ waveTextAnimation('hello world');
 >Place this CSS in a file
 
 ```css
-.pTwo span {
-  transform: translateY(100%) rotateX(-90deg);
-}
 .text-container:hover .pOne span {
   transform: translateY(-100%) rotateX(-90deg);
 }

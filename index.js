@@ -18,29 +18,31 @@ const waveTextAnimation = (text) => {
   pTwo.innerText = text;
   const textContent = pOne.textContent;
   pOne.innerHTML = '';
+  const textArray = Array.from(textContent);
+  textArray.forEach((e, i) => {
+    const span = document.createElement('span');
+    span.style.transformOrigin = 'bottom';
+    span.style.display = "inline-block";
+    span.style.transition = "0.5s";
+    span.style.transitionDelay = `${0.03 * i}s`
+    span.id = i;
+    span.textContent = e;
+    pOne.appendChild(span);
+  });
   const textContent2 = pTwo.textContent;
   pTwo.innerHTML = '';
-  const textArray = Array.from(textContent);
   const textArray2 = Array.from(textContent2);
-  textArray.forEach((e, i) => {
-      const span = document.createElement('span');
-      span.style.transformOrigin = 'bottom';
-      span.style.display = "inline-block";
-      span.style.transition = "0.5s";
-      span.style.transitionDelay = `${0.03 * i}s`
-      span.id = i;
-      span.textContent = e;
-      pOne.appendChild(span);
-  });
   textArray2.forEach((e, i) => {
-      const span = document.createElement('span');
-      span.style.transformOrigin = 'top';
-      span.style.display = "inline-block";
-      span.style.transition = "0.5s";
-      span.style.transitionDelay = `${0.03 * i}s`
-      span.id = i;
-      span.textContent = e;
-      pTwo.appendChild(span);
+    const span = document.createElement('span');
+    span.style.transformOrigin = 'top';
+    span.style.display = "inline-block";
+    span.style.translateY = '100%';
+    span.style.rotateX = '-90deg';
+    span.style.transition = "0.5s";
+    span.style.transitionDelay = `${0.03 * i}s`
+    span.id = i;
+    span.textContent = e;
+    pTwo.appendChild(span);
   });
 }
 export default waveTextAnimation;
