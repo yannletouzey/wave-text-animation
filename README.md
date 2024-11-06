@@ -10,7 +10,7 @@
 import waveTextAnimation from 'wave-text-animation';
 ```
 
->calling waveTextAnimation function from a package with text to animate
+>calling waveTextAnimation function from a package with your text to animate
 
 ```js
 waveTextAnimation('hello world');
@@ -20,15 +20,4 @@ waveTextAnimation('hello world');
 
 ```html
 <div id="text-container" class="text-container"></div>
-```
-
->Place this CSS in a file
-
-```css
-.text-container:hover .pOne span {
-  transform: translateY(-100%) rotateX(-90deg);
-}
-.text-container:hover .pTwo span {
-  transform: translateY(0%) rotateX(0deg);
-}
 ```

@@ -1,6 +1,6 @@
 {
   "name": "wave-text-animation",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Wave animation for text",
   "main": "index.js",
   "scripts": {

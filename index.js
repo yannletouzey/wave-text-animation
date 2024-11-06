@@ -32,17 +32,37 @@ const waveTextAnimation = (text) => {
   const textContent2 = pTwo.textContent;
   pTwo.innerHTML = '';
   const textArray2 = Array.from(textContent2);
+  
   textArray2.forEach((e, i) => {
     const span = document.createElement('span');
     span.style.transformOrigin = 'top';
     span.style.display = "inline-block";
-    span.style.translateY = '100%';
-    span.style.rotateX = '-90deg';
     span.style.transition = "0.5s";
     span.style.transitionDelay = `${0.03 * i}s`
     span.id = i;
     span.textContent = e;
     pTwo.appendChild(span);
+  });
+  const pOneSpans = pOne.querySelectorAll('.pOne span');
+  const pTwoSpans = pTwo.querySelectorAll('.pTwo span');
+  pTwoSpans.forEach((e, i) => {    
+    e.style.transform = `translateY(100%) rotateX(-90deg)`;
+  });
+  textContainer.addEventListener('mouseover', () => {
+    pOneSpans.forEach((e, i) => {
+      e.style.transform =  `translateY(-100%) rotateX(-90deg)`;
+    })
+    pTwoSpans.forEach((e, i) => {
+      e.style.transform = `translateY(0%) rotateX(0deg)`;
+    });
+  });
+  textContainer.addEventListener('mouseout', () => {
+    pOneSpans.forEach((e, i) => {
+      e.style.transform =  `translateY(0%) rotateX(0deg)`;
+    })
+    pTwoSpans.forEach((e, i) => {
+      e.style.transform = `translateY(100%) rotateX(-90deg)`;
+    });
   });
 }
 export default waveTextAnimation;
