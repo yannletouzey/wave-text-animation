@@ -1,23 +1,32 @@
 # Wave Text Animation
-
 ![Wave Text Animation](typo-anime.gif)
+> npm import wave-text-animation
 
->npm i wave-text-animation
-
->import package
-
+> add this class <mark>class="text-container"</mark>  to all the texts you want to animate. 
+```html
+<div class="text-container"></div>
+```
+> import the package in your js file
 ```js
 import waveTextAnimation from 'wave-text-animation';
 ```
-
->calling waveTextAnimation function from a package with your text to animate
+> target the texts you want to animate.
+> for one 
+```js
+const myTextContainer = document.querySelector('.text-animation')
+```
+> for multiple
+```js
+const myTextContainers = document.querySelectorAll('.text-animation')
+```
+> calling waveTextAnimation function
 
 ```js
-waveTextAnimation('hello world');
-````
-
->Add this container in html - div or p or whatever you want but with<mark> id="text-container" class="text-container"</mark> 
-
-```html
-<div id="text-container" class="text-container"></div>
+waveTextAnimation(myTextContainer)
+```
+>or for multiple
+```js
+textContainers.forEach(textContainer => {
+  waveTextAnimation(textContainer);
+});
 ```
