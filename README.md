@@ -30,3 +30,10 @@ textContainers.forEach(textContainer => {
   waveTextAnimation(textContainer);
 });
 ```
+>with options (optional)
+```js
+waveTextAnimation(myTextContainer, {
+  delay: 0.015,
+  duration: 0.5
+})
+```

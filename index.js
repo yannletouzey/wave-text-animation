@@ -1,4 +1,9 @@
-const waveTextAnimation = (container) => {
+const waveTextAnimation = (container, options = {}) => {
+  const defaults = {
+    delay: 0.015,
+    duration: 0.5
+  };
+  const settings = { ...defaults, ...options };
   container.style.position = 'relative';
   container.style.display = 'block';
   const originalText = container.textContent.trim();
@@ -18,39 +23,46 @@ const waveTextAnimation = (container) => {
     div.innerHTML = '';
     letters.forEach((letter, index) => {
       if (letter === ' ') {
-        div.innerHTML += `<span style="display:inline-block; width:0.5em; transition-duration: 0.5s; will-change: transform; display: inline-block">&nbsp;</span>`;
+        div.innerHTML += `<span style="
+          display: inline-block; 
+          transition-duration: ${settings.duration}s; 
+          will-change: transform;
+        ">&nbsp;</span>`;
       } else {
-        div.innerHTML += `<span style="display: inline-block; transition-delay: ${index * 0.015}s; transition-duration: 0.5s; will-change: transform; display: inline-block">${letter}</span>`;
+        div.innerHTML += `<span style="
+          display: inline-block; 
+          transition-delay: ${index * settings.delay}s; 
+          transition-duration: ${settings.duration}s; 
+          will-change: transform;
+        ">${letter}</span>`;
       }
     });
   });
   const divOneSpans = divOne.querySelectorAll('span');
   divOneSpans.forEach(span => {
     span.style.transformOrigin = 'bottom';
-  })
+  });
   const divTwoSpans = divTwo.querySelectorAll('span');
   divTwoSpans.forEach(span => {
     span.style.transformOrigin = 'top';
     span.style.transform = 'translateY(100%) rotateX(-90deg)';
-  })
+  });
   container.addEventListener('mouseenter', () => {
     divOneSpans.forEach(span => {
       span.style.transform = 'translateY(-100%) rotateX(-90deg)';
-    })
+    });
     divTwoSpans.forEach(span => {
       span.style.transform = 'translateY(0) rotateX(0deg)';
-    })
-  })
-
+    });
+  });
   container.addEventListener('mouseleave', () => {
     divOneSpans.forEach(span => {
       span.style.transform = 'translateY(0) rotateX(0deg)';
-    })
+    });
     divTwoSpans.forEach(span => {
       span.style.transform = 'translateY(100%) rotateX(-90deg)';
-    })
-  })
-
+    });
+  });
   return container;
 };
 export default waveTextAnimation;
