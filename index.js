@@ -5,18 +5,16 @@ const waveTextAnimation = (container, options = {}) => {
   };
   const settings = { ...defaults, ...options };
   container.style.position = 'relative';
-  container.style.display = 'block';
   const originalText = container.textContent.trim();
   const letters = originalText.split('');
   container.innerHTML = '';
-  const divOne = document.createElement('div');
+  const divOne = document.createElement('span');
   divOne.className = 'text-wave-one';
-  const divTwo = document.createElement('div');
+  const divTwo = document.createElement('span');
   divTwo.className = 'text-wave-two';
   divTwo.style.position = 'absolute';
   divTwo.style.top = '0';
   divTwo.style.left = '0';
-  divTwo.style.width = '100%';
   container.append(divOne, divTwo);
   const divs = [divOne, divTwo];
   divs.forEach((div) => {
