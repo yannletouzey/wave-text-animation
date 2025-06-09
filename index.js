@@ -13,8 +13,6 @@ const waveTextAnimation = (container, options = {}) => {
   const divTwo = document.createElement('span');
   divTwo.className = 'text-wave-two';
   divTwo.style.position = 'absolute';
-  divTwo.style.top = '0';
-  divTwo.style.left = '0';
   container.append(divOne, divTwo);
   const divs = [divOne, divTwo];
   divs.forEach((div) => {
